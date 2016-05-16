@@ -12,14 +12,26 @@ import UIKit
 class ViewController: PeekVC {
     
     @IBOutlet weak var btn: UIButton!
+    @IBOutlet weak var btn2: UIButton!
+    @IBOutlet weak var btn3: UIButton!
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        peekRegister(btn)
+        let vc1 = SecVC(nibName: "SecVC", bundle: nil)
+        registerPeek(btn, peekVC: vc1)
         
-        peekVC = SecVC(nibName: "SecVC", bundle: nil)
+        
+        let vc2 = UIViewController()
+        vc2.view.backgroundColor = UIColor.redColor()
+        registerPeek(btn2, peekVC: vc2)
+        
+        let vc3 = UIViewController()
+        vc3.view.backgroundColor = UIColor.blueColor()
+        registerPeek(btn3, peekVC: vc3)
+        
     }
 
 

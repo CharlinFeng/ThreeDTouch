@@ -10,39 +10,82 @@ import UIKit
 
 class PeekVC: UIViewController, UIViewControllerPreviewingDelegate {
     
-    private var sourceView: UIView!
+    private class PeekModel {
     
-    var peekVC: UIViewController!
+        var ctx: UIViewControllerPreviewing!
+        var peekVC: UIViewController!
+        weak var sourceView: UIView!
+    }
     
-    var ucp: UIViewControllerPreviewing!
+    private var peekModels: [PeekModel] = []
     
-    func peekRegister(sourceView: UIView!){
-        
-        //记录sourceView
-        self.sourceView = sourceView
-        
+    
+    
+    func registerPeek(sourceView: UIView!, peekVC: UIViewController!){
+    
         if #available(iOS 9.0, *) {
-            ucp = registerForPreviewingWithDelegate(self, sourceView: sourceView ?? view)
+            
+            let m = PeekModel()
+            
+            let ctx = registerForPreviewingWithDelegate(self, sourceView: sourceView ?? view)
+            
+            m.ctx = ctx
+            m.peekVC = peekVC
+            m.sourceView = sourceView
+            
+            peekModels.append(m)
         }
     }
     
-    func unregisterPeek(){
-        if ucp == nil {return}
-        if #available(iOS 9.0, *) {
-            unregisterForPreviewingWithContext(ucp)
+    
+    func unRegisterPeek(sourceView: UIView!){
+        
+        for (i,pm) in peekModels.enumerate(){
+            
+            if (pm.sourceView!).isEqual(sourceView){
+                
+                if #available(iOS 9.0, *) {
+                    unregisterForPreviewingWithContext(pm.ctx)
+                }
+                
+                peekModels.removeAtIndex(i)
+                break
+            }
         }
-        peekVC = nil
-        sourceView = nil
     }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
-        return peekVC
+        var vc: UIViewController! = nil
+        
+        for (_,pm) in peekModels.enumerate(){
+            
+            if (pm.ctx!).isEqual(previewingContext){
+            
+                vc = pm.peekVC; break
+            }
+        }
+        
+        return vc
     }
-    
+
     func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
-        if peekVC == nil {return}
-        if sourceView == nil {return}
+        
+        var vc: UIViewController! = nil
+        var v: UIView! = nil
+        
+        for (_,pm) in peekModels.enumerate(){
+            
+            if (pm.ctx!).isEqual(previewingContext){
+                
+                vc = pm.peekVC;
+                v = pm.sourceView
+                break
+            }
+        }
+        
+        if vc == nil || v == nil {return}
+        
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
     

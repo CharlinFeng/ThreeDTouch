@@ -73,12 +73,24 @@
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jr-h8-7jl">
+                                <rect key="frame" x="42" y="597" width="69" height="28"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.2901960784" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="btn2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3a-LL-Ujv">
+                                <rect key="frame" x="244" y="596" width="69" height="30"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.2901960784" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="btn3"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.76862745099999996" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="这是首页" id="qCm-3l-S4R"/>
                     <connections>
                         <outlet property="btn" destination="4nz-Lq-fFC" id="rsc-9S-4p2"/>
+                        <outlet property="btn2" destination="7jr-h8-7jl" id="fZN-Se-D2X"/>
+                        <outlet property="btn3" destination="g3a-LL-Ujv" id="kIt-da-w9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rb-fi-h20" userLabel="First Responder" sceneMemberID="firstResponder"/>
