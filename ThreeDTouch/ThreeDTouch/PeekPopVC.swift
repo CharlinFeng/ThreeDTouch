@@ -14,14 +14,25 @@ class PeekVC: UIViewController, UIViewControllerPreviewingDelegate {
     
     var peekVC: UIViewController!
     
-    func peekRegister(sourceView: UIView!){
+    var ucp: UIViewControllerPreviewing!
     
+    func peekRegister(sourceView: UIView!){
+        
         //记录sourceView
         self.sourceView = sourceView
         
         if #available(iOS 9.0, *) {
-            registerForPreviewingWithDelegate(self, sourceView: sourceView ?? view)
+            ucp = registerForPreviewingWithDelegate(self, sourceView: sourceView ?? view)
         }
+    }
+    
+    func unregisterPeek(){
+        if ucp == nil {return}
+        if #available(iOS 9.0, *) {
+            unregisterForPreviewingWithContext(ucp)
+        }
+        peekVC = nil
+        sourceView = nil
     }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -30,6 +41,8 @@ class PeekVC: UIViewController, UIViewControllerPreviewingDelegate {
     }
     
     func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        if peekVC == nil {return}
+        if sourceView == nil {return}
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
     
