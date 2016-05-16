@@ -35,6 +35,10 @@
 ==========
 <br/><br/>
 #### 1.继承自PeekVC
+
+        class MyVC: PeekVC
+  
+  
 <br/><br/>
 
 #### 2.注册Peek
@@ -50,3 +54,7 @@
 #### 4.一切移除同一控制器内所有Peek
 
         removeAllPeek()
+<br/><br/> 
+#### 5.TableView支持
+
+tableview一样支持，建议使用普通vc添加tableview即可，然后在cellForIndexPath注册cell即可。
