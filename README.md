@@ -35,10 +35,12 @@
 <br/><br/>
 #### 1.继承自PeekVC
 <br/><br/>
+
 #### 2.注册Peek
 
         registerPeek(btn, peekVC: vc)
-   
+  
+<br/><br/> 
 #### 3.特别注意，注销Peek
 
         unRegisterPeek(btn)
