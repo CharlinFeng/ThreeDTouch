@@ -34,4 +34,8 @@
         2. 设置变量即可       
         peekRegister(btn)
         peekVC = SecVC(nibName: "SecVC", bundle: nil)
+        
+特别注意，注销Peek，请调用：
+
+        unregisterPeek()
 
