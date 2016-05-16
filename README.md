@@ -1,6 +1,6 @@
 # 3D Touch 快速集成 （持续关注[信息公告牌](https://github.com/CharlinFeng/Show)）
-##. Swift 2.1
-##. XCode 7.3
+####. Swift 2.1
+####. XCode 7.3
 <br/><br/>
 
 用最简单的方式集成3D Touch：<br/>
