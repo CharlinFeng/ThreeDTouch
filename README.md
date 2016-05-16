@@ -30,13 +30,13 @@
 
 二、Peek Gesture 
 ==========
-### 注：本框架支持同一页面无限控件无限注册Peek
+### 注：本框架支持同一页面无限控件注册无限Peek对
 
 ==========
 <br/><br/>
 #### 1.继承自PeekVC
 
-        class MyVC: PeekVC
+        class MyVC: PeekVC{ }
   
   
 <br/><br/>
@@ -51,7 +51,7 @@
         unRegisterPeek(btn)
 
 <br/><br/> 
-#### 4.一切移除同一控制器内所有Peek
+#### 4.一键移除同一控制器内所有Peek
 
         removeAllPeek()
 <br/><br/> 
