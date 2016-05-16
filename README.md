@@ -28,6 +28,6 @@
 
         1.继承自PeekVC
         2. 设置变成即可       
-                peekRegister(btn)
-                peekVC = SecVC(nibName: "SecVC", bundle: nil)
+        peekRegister(btn)
+        peekVC = SecVC(nibName: "SecVC", bundle: nil)
 
