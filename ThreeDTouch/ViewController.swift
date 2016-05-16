@@ -15,8 +15,6 @@ class ViewController: PeekVC {
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn3: UIButton!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,19 +29,14 @@ class ViewController: PeekVC {
         let vc3 = UIViewController()
         vc3.view.backgroundColor = UIColor.blueColor()
         registerPeek(btn3, peekVC: vc3)
-        
+
     }
 
-
-    
     @IBAction func btnClick(sender: AnyObject) {
         
         print("点击了按钮")
     }
     
     
-    
-
-
 }
 

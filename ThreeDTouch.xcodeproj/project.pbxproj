@@ -17,6 +17,8 @@
 		890B99DB1CE9A7000095B46C /* SecVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890B99DA1CE9A7000095B46C /* SecVC.swift */; };
 		890B99DD1CE9AAFB0095B46C /* SecVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890B99DC1CE9AAFB0095B46C /* SecVC.xib */; };
 		899248391CE9BF4500B948A3 /* PeekPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899248381CE9BF4500B948A3 /* PeekPopVC.swift */; };
+		899248441CE9F72E00B948A3 /* SystemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899248431CE9F72E00B948A3 /* SystemVC.swift */; };
+		899248461CE9F76200B948A3 /* SystemVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899248451CE9F76200B948A3 /* SystemVC+TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		890B99DA1CE9A7000095B46C /* SecVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecVC.swift; sourceTree = "<group>"; };
 		890B99DC1CE9AAFB0095B46C /* SecVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecVC.xib; sourceTree = "<group>"; };
 		899248381CE9BF4500B948A3 /* PeekPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeekPopVC.swift; sourceTree = "<group>"; };
+		899248431CE9F72E00B948A3 /* SystemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemVC.swift; sourceTree = "<group>"; };
+		899248451CE9F76200B948A3 /* SystemVC+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemVC+TableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				890B99C51CE99DFD0095B46C /* ViewController.swift */,
 				890B99DA1CE9A7000095B46C /* SecVC.swift */,
 				890B99DC1CE9AAFB0095B46C /* SecVC.xib */,
+				899248431CE9F72E00B948A3 /* SystemVC.swift */,
+				899248451CE9F76200B948A3 /* SystemVC+TableView.swift */,
 				890B99C71CE99DFD0095B46C /* Main.storyboard */,
 				890B99CA1CE99DFD0095B46C /* Assets.xcassets */,
 				890B99CC1CE99DFD0095B46C /* LaunchScreen.storyboard */,
@@ -164,7 +170,9 @@
 				890B99D71CE99E210095B46C /* ThreeDTouch.swift in Sources */,
 				890B99C61CE99DFD0095B46C /* ViewController.swift in Sources */,
 				890B99D91CE9A1590095B46C /* AppDelegate+QA.swift in Sources */,
+				899248441CE9F72E00B948A3 /* SystemVC.swift in Sources */,
 				890B99C41CE99DFD0095B46C /* AppDelegate.swift in Sources */,
+				899248461CE9F76200B948A3 /* SystemVC+TableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

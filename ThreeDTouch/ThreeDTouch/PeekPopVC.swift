@@ -23,6 +23,10 @@ class PeekVC: UIViewController, UIViewControllerPreviewingDelegate {
     
     func registerPeek(sourceView: UIView!, peekVC: UIViewController!){
     
+        if sourceView == nil {return}
+        
+        unRegisterPeek(sourceView)
+        
         if #available(iOS 9.0, *) {
             
             let m = PeekModel()
@@ -40,6 +44,8 @@ class PeekVC: UIViewController, UIViewControllerPreviewingDelegate {
     
     func unRegisterPeek(sourceView: UIView!){
         
+        if sourceView == nil {return}
+        
         for (i,pm) in peekModels.enumerate(){
             
             if (pm.sourceView!).isEqual(sourceView){
@@ -56,17 +62,27 @@ class PeekVC: UIViewController, UIViewControllerPreviewingDelegate {
     
     func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
-        var vc: UIViewController! = nil
+        var peekModel: PeekModel! = nil
         
         for (_,pm) in peekModels.enumerate(){
             
             if (pm.ctx!).isEqual(previewingContext){
             
-                vc = pm.peekVC; break
+                peekModel = pm; break
+                
             }
         }
         
-        return vc
+//        if peekModel != nil {
+//        
+//            //设置禁止模糊Rect
+//            if #available(iOS 9.0, *) {
+//                previewingContext.sourceRect = peekModel.sourceView.convertRect(peekModel.sourceView.bounds, toView: nil)
+//                print("\(peekModel.sourceView.convertRect(peekModel.sourceView.bounds, toView: nil))")
+//            }
+//        }
+
+        return peekModel.peekVC
     }
 
     func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
@@ -88,5 +104,37 @@ class PeekVC: UIViewController, UIViewControllerPreviewingDelegate {
         
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
+    
+    
+    func removeAllPeek(){
+        removeAllPeekInVC(self)
+    }
+    
+    private func removeAllPeekInVC(vc: UIViewController){
+        
+        removeAllPeekInView(vc.view)
+        
+        let childVCs = vc.childViewControllers
+        
+        if childVCs.count == 0 {return}
+        
+        for (_, vc_child) in childVCs.enumerate(){
+            
+            removeAllPeekInView(vc_child.view)
+        }
+    }
+    
+    private func removeAllPeekInView(v: UIView){
+        
+        let subViews = v.subviews
+        
+        if subViews.count == 0 {return}
+        
+        for (_, subView) in subViews.enumerate(){
+            
+            unRegisterPeek(subView)
+        }
+    }
+    
     
 }
