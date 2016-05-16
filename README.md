@@ -31,7 +31,7 @@
 ==========
 
         1.继承自PeekVC
-        2. 设置变成即可       
+        2. 设置变量即可       
         peekRegister(btn)
         peekVC = SecVC(nibName: "SecVC", bundle: nil)
 
