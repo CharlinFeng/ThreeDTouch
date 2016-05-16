@@ -27,15 +27,24 @@
         ThreeDTouch.create([m1,m2])
 
 <br/><br/><br/>
-二、Peek Gesture
+二、Peek Gesture 
+
+### 注：本框架支持同一页面无限控件无限注册Peek
+
 ==========
+<br/><br/>
+#### 1.继承自PeekVC
+<br/><br/>
+#### 2.注册Peek
 
-        1.继承自PeekVC
-        2. 设置变量即可       
-        peekRegister(btn)
-        peekVC = SecVC(nibName: "SecVC", bundle: nil)
+        registerPeek(btn3, peekVC: vc3)
+<br/><br/>
+#### 2.注册
+
+        registerPeek(btn3, peekVC: vc3)
         
-特别注意，注销Peek，请调用：
+<br/><br/>        
+#### 3.特别注意，注销Peek
 
-        unregisterPeek()
+        unRegisterPeek(btn)
 
