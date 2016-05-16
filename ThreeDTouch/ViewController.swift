@@ -19,8 +19,7 @@ class ViewController: PeekVC {
         
         peekRegister(btn)
         
-        let vc = SecVC(nibName: "SecVC", bundle: nil)
-        peekVC = vc
+        peekVC = SecVC(nibName: "SecVC", bundle: nil)
     }
 
 
@@ -29,6 +28,8 @@ class ViewController: PeekVC {
         
         print("点击了按钮")
     }
+    
+    
     
 
 
