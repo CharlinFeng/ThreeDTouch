@@ -37,11 +37,11 @@
 <br/><br/>
 #### 2.注册Peek
 
-        registerPeek(btn3, peekVC: vc3)
+        registerPeek(btn, peekVC: vc)
 <br/><br/>
 #### 2.注册
 
-        registerPeek(btn3, peekVC: vc3)
+        registerPeek(btn, peekVC: vc)
         
 <br/><br/>        
 #### 3.特别注意，注销Peek
