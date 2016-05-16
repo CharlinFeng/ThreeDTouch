@@ -10,7 +10,7 @@ import UIKit
 
 class PeekVC: UIViewController, UIViewControllerPreviewingDelegate {
     
-    var sourceView: UIView!
+    private var sourceView: UIView!
     
     var peekVC: UIViewController!
     

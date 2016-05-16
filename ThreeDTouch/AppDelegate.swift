@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let m1 = ThreeDTouchItemModel(title: "消息", subTitle: "发一条消息", imgName: "news", userInfo: nil)
-       
-        m1.quickAction = {
         
+        m1.quickAction = {
+            
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.blueColor()
             vc.title = m1.title
@@ -50,6 +50,91 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         ThreeDTouch.create([m1,m2])
+        
+        
+        
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(20 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
+            
+            
+            print("好了")
+            
+            
+            let m1 = ThreeDTouchItemModel(title: "消息111", subTitle: "发一条消息", imgName: "news", userInfo: nil)
+            
+            m1.quickAction = {
+                
+                let vc = UIViewController()
+                vc.view.backgroundColor = UIColor.blueColor()
+                vc.title = m1.title
+                
+                let navVC = self.window?.rootViewController as? UINavigationController
+                
+                print(navVC)
+                
+                navVC?.pushViewController(vc, animated: true)
+            }
+            
+            
+            let m2 = ThreeDTouchItemModel(title: "新建111", subTitle: "新建一条说说", imgName: "unfinished", userInfo: nil)
+            
+            m2.quickAction = {
+                
+                let vc = UIViewController()
+                vc.view.backgroundColor = UIColor.redColor()
+                vc.title = m1.title
+                
+                let navVC = self.window?.rootViewController as? UINavigationController
+                
+                print(navVC)
+                
+                navVC?.pushViewController(vc, animated: true)
+            }
+            
+            ThreeDTouch.create([m1,m2])
+        })
+        
+        
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(30 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
+            
+            
+            print("好了")
+            
+            
+            let m1 = ThreeDTouchItemModel(title: "消息222", subTitle: "发一条消息", imgName: "news", userInfo: nil)
+            
+            m1.quickAction = {
+                
+                let vc = UIViewController()
+                vc.view.backgroundColor = UIColor.blueColor()
+                vc.title = m1.title
+                
+                let navVC = self.window?.rootViewController as? UINavigationController
+                
+                print(navVC)
+                
+                navVC?.pushViewController(vc, animated: true)
+            }
+            
+            
+            let m2 = ThreeDTouchItemModel(title: "新建222", subTitle: "新建一条说说", imgName: "unfinished", userInfo: nil)
+            
+            m2.quickAction = {
+                
+                let vc = UIViewController()
+                vc.view.backgroundColor = UIColor.redColor()
+                vc.title = m1.title
+                
+                let navVC = self.window?.rootViewController as? UINavigationController
+                
+                print(navVC)
+                
+                navVC?.pushViewController(vc, animated: true)
+            }
+            
+            ThreeDTouch.create([m1,m2])
+        })
         
         
         return true
